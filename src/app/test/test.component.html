@@ -14,5 +14,6 @@
     <div [class]="dangerClass">Binding the class from the component</div>
     <div [class.text-success]="!isError">Conditional applying the class</div>
     <div [ngClass]="message">Binding a Class from Object.</div>
+    <button (click)="onClick()">{{buttonValue}}</button><span>{{greeting}}</span>
   </div>
 </div>

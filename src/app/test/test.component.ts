@@ -16,9 +16,24 @@ export class TestComponent implements OnInit {
   };
   public dangerClass = 'text-danger';
   public isDisabled = 'true';
+  public greeting = '';
+  public toggle = false;
+  public buttonValue = 'Greet Me';
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onClick() {
+  	if (this.toggle) {
+  		this.greeting = 'Welcome Tanmay';
+  		this.buttonValue = 'Dont Greet Me';
+  	} else {
+  		this.greeting = '';
+  		this.buttonValue = 'Greet Me';
+
+  	}
+  	this.toggle = !this.toggle;
   }
 
 }
