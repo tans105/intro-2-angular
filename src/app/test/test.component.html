@@ -1,5 +1,5 @@
 <!-- Binding disabled property of input tag using class variable isDisabled -->
-<div style="border: 1px solid; margin: 5px; padding: 5px;">
+<div class="section-div">
   <h2>One way binding, Attribute binding, Class binding</h2>
   <p>
     Welcome {{name}}
@@ -18,9 +18,26 @@
     <button (click)="onClick()">{{buttonValue}}</button><span>{{greeting}}</span>
   </div>
 </div>
-<div style="border: 1px solid">
+<div class="section-div">
   <h2>Two Way Binding</h2>
   <div style="margin: 5px;">Username :
     <input [(ngModel)]="variable" type="text" value="{{variable}}">{{variable}}
   </div>
+</div>
+<div class="section-div">
+  <h2>Conditional Directives</h2>
+  <div *ngIf="displayIf; then ifBlock; else elseBlock"></div>
+  <ng-template #ifBlock>
+    <p>Hi I am the if block</p>
+  </ng-template>
+  <ng-template #elseblock>
+    <p>Hi I am the else block</p>
+  </ng-template>
+</div>
+<div class="section-div">
+  
+    <div *ngFor="let user of users; index as i">
+    	<div>{{i+1}}. {{user.name}}</div>
+    </div>
+  
 </div>

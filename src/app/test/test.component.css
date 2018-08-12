@@ -9,3 +9,9 @@
 .text-success {
   color: green;
 }
+
+.section-div{
+	padding: 5px;
+	margin: 5px;
+	border: 1px solid;
+}

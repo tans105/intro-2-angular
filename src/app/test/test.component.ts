@@ -19,6 +19,12 @@ export class TestComponent implements OnInit {
   public greeting = '';
   public toggle = false;
   public buttonValue = 'Greet Me';
+  public displayIf = true;
+  public users = [
+  {name: 'Tanmay Awasthi'},
+  {name: 'Manisha Ojha'},
+  {name: 'Pushkar Dwivedi'}
+  ];
   constructor() { }
 
   ngOnInit() {
