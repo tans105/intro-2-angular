@@ -1,8 +1,9 @@
-<p>
-  Welcome {{name}}
-</p>
 <!-- Binding disabled property of input tag using class variable isDisabled -->
-<div>
+<div style="border: 1px solid; margin: 5px; padding: 5px;">
+  <h2>One way binding, Attribute binding, Class binding</h2>
+  <p>
+    Welcome {{name}}
+  </p>
   <span> Property Binding using Square Braces 
     <input [disabled]="isDisabled" type="text" name="{{name}}" value="{{name}}" />
   </span>
@@ -15,5 +16,11 @@
     <div [class.text-success]="!isError">Conditional applying the class</div>
     <div [ngClass]="message">Binding a Class from Object.</div>
     <button (click)="onClick()">{{buttonValue}}</button><span>{{greeting}}</span>
+  </div>
+</div>
+<div style="border: 1px solid">
+  <h2>Two Way Binding</h2>
+  <div style="margin: 5px;">Username :
+    <input [(ngModel)]="variable" type="text" value="{{variable}}">{{variable}}
   </div>
 </div>
