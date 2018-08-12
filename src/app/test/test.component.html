@@ -1,3 +1,18 @@
 <p>
-  This is a test component! 
+  Welcome {{name}}
 </p>
+<!-- Binding disabled property of input tag using class variable isDisabled -->
+<div>
+  <span> Property Binding using Square Braces 
+    <input [disabled]="isDisabled" type="text" name="{{name}}" value="{{name}}" />
+  </span>
+  <p>(Or)</p>
+  <span> Property Binding using bind hyphen
+    <input bind-disabled="isDisabled" type="text" name="{{name}}" value="{{name}}" />
+  </span>
+  <div>
+    <div [class]="dangerClass">Binding the class from the component</div>
+    <div [class.text-success]="!isError">Conditional applying the class</div>
+    <div [ngClass]="message">Binding a Class from Object.</div>
+  </div>
+</div>
