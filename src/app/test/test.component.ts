@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-test',
@@ -10,9 +10,9 @@ export class TestComponent implements OnInit {
   public isError = false;
   public isSpecial = true;
   public message = {
-  	'text-special' : this.isSpecial,
-  	'text-error' : this.isError,
-  	'text-success' : !this.isError
+    'text-special': this.isSpecial,
+    'text-error': this.isError,
+    'text-success': !this.isError
   };
   public dangerClass = 'text-danger';
   public isDisabled = 'true';
@@ -21,25 +21,27 @@ export class TestComponent implements OnInit {
   public buttonValue = 'Greet Me';
   public displayIf = true;
   public users = [
-  {name: 'Tanmay Awasthi'},
-  {name: 'Manisha Ojha'},
-  {name: 'Pushkar Dwivedi'}
+    {name: 'Tanmay Awasthi'},
+    {name: 'Manisha Ojha'},
+    {name: 'Pushkar Dwivedi'}
   ];
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
   onClick() {
-  	if (this.toggle) {
-  		this.greeting = 'Welcome Tanmay';
-  		this.buttonValue = 'Dont Greet Me';
-  	} else {
-  		this.greeting = '';
-  		this.buttonValue = 'Greet Me';
+    if (this.toggle) {
+      this.greeting = 'Welcome Tanmay';
+      this.buttonValue = 'Dont Greet Me';
+    } else {
+      this.greeting = '';
+      this.buttonValue = 'Greet Me';
 
-  	}
-  	this.toggle = !this.toggle;
+    }
+    this.toggle = !this.toggle;
   }
 
 }

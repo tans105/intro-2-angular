@@ -1,48 +1,48 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 function overridenTestMethod(target, name, desc) { // Test method to understand extend in ts
-	const original = desc.value;
+  const original = desc.value;
 
-	desc.value = function() {
-		console.log('Hej Hyderabad');
-	};
+  desc.value = function () {
+    console.log('Hej Hyderabad');
+  };
 
-	return desc;
+  return desc;
 }
 
 function overrideMultiplyNumber(target, name, desc) { // Method will be used to override the multiplication method
-	const original = desc.value;
+  const original = desc.value;
 
-	desc.value = function(...args) {
-		console.log('Arguments for the functions are ', args, '.');
-		const result = original.apply(this, args);
-		console.log('Result :', result);
-	};
+  desc.value = function (...args) {
+    console.log('Arguments for the functions are ', args, '.');
+    const result = original.apply(this, args);
+    console.log('Result :', result);
+  };
 
-	return desc;
+  return desc;
 }
 
 @Component({
-	selector: 'app-root',
-	templateUrl: './app.component.html',
-	styleUrls: ['./app.component.css']
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
 
 export class AppComponent {
-  	title = 'intro2angular';
+  title = 'intro2angular';
 
-	constructor() {
- 		this.testMethod();
- 		this.multiplyNumber(5, 2);
- 	}
+  constructor() {
+    this.testMethod();
+    this.multiplyNumber(5, 2);
+  }
 
- 	@overridenTestMethod
-	testMethod() {
-		console.log('Test method invoked');
- 	}
+  @overridenTestMethod
+  testMethod() {
+    console.log('Test method invoked');
+  }
 
- 	@overrideMultiplyNumber
- 	multiplyNumber(a, b) {
- 		return a * b;
- 	}
+  @overrideMultiplyNumber
+  multiplyNumber(a, b) {
+    return a * b;
+  }
 }
