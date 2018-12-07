@@ -1,10 +1,10 @@
-<form>
+<div>
     <div class="form-group row">
         <div class="col-sm-2">
-            <label class="col-form-label" for="characterName">Name</label>
+            <label class="col-form-label">Name</label>
         </div>
         <div class="col-sm-10">
-            <input type="email" class="form-control col-sm-10" id="characterName" placeholder="Character Name">
+            <input type="text" class="form-control col-sm-10" placeholder="Character Name" [(ngModel)]="name">
         </div>
     </div>
     <div class="row">
@@ -13,31 +13,31 @@
         </div>
         <div class="col-sm-10">
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="l1" id="l1" value="1" checked>
+                <input class="form-check-input" type="radio" name="l1" id="l1" value="1" [checked]="level === 1" (change)="changeLevel(1)">
                 <label class="form-check-label level-1" for="l1">
                     Level 1
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="l2" id="l2" value="2">
+                <input class="form-check-input" type="radio" name="l2" id="l2" value="2" [checked]="level === 2" (change)="changeLevel(2)">
                 <label class="form-check-label level-2" for="l2">
                     Level 2
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="l3" id="l3" value="3">
+                <input class="form-check-input" type="radio" name="l3" id="l3" value="3" [checked]="level === 3" (change)="changeLevel(3)">
                 <label class="form-check-label level-3" for="l3">
                     Level 3
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="l4" id="l4" value="4">
+                <input class="form-check-input" type="radio" name="l4" id="l4" value="4" [checked]="level === 4" (change)="changeLevel(4)">
                 <label class="form-check-label level-4" for="l4">
                     Level 4
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="l5" id="l5" value="5">
+                <input class="form-check-input" type="radio" name="l5" id="l5" value="5" [checked]="level === 5" (change)="changeLevel(5)">
                 <label class="form-check-label level-5" for="l5">
                     Level 5
                 </label>
@@ -50,9 +50,9 @@
             <label for="characterType">Character type</label>
         </div>
         <div class="col-sm-10">
-            <select class="form-control" id="characterType">
-                <option selected>Hero</option>
-                <option>Villain</option>
+            <select class="form-control" id="characterType" [(ngModel)]="type">
+                <option value="H" selected>Hero</option>
+                <option value="V">Villain</option>
             </select>
         </div>
     </div>
@@ -61,7 +61,10 @@
             <label for="desc">Tell me more about it</label>
         </div>
         <div class="col-sm-10">
-            <textarea class="form-control" id="desc" rows="3"></textarea>
+            <textarea class="form-control" id="desc" rows="3" [(ngModel)]="desc"></textarea>
         </div>
     </div>
-</form>
+    <div class="text-center">
+        <a class="btn btn-primary" href="#" (click)="addCharacter()" role="button">Add Character</a>
+    </div>
+</div>

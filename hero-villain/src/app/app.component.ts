@@ -6,6 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'hero-villain';
-//  Hero points and Villain points should balance
+  title = 'My Universe';
 }
