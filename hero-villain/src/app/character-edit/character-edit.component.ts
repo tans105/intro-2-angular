@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Character} from "../character.model";
+import {CharacterService} from "../character.service";
 
 @Component( {
     selector: 'app-character-edit',
@@ -16,7 +17,7 @@ export class CharacterEditComponent implements OnInit
     desc: string;
     type: string = "H";
 
-    constructor()
+    constructor(private charService: CharacterService)
     {
     }
 
@@ -31,8 +32,9 @@ export class CharacterEditComponent implements OnInit
 
     addCharacter()
     {
-        console.log( this.name, this.type, this.level, this.desc );
-        this.char = new Character( this.id, this.name, this.level, this.type, this.desc );
+        // console.log( this.id, this.name, this.type, this.level, this.desc );
+        this.char = new Character( this.id, this.name, this.level, this.desc, this.type);
+        this.charService.addCharacter(this.char);
         this.id++;
     }
 }
