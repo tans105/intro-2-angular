@@ -1,17 +1,35 @@
-<div *ngFor="let character of characters">
-    <div class="row">
-        <div class="col-sm-2">{{character.name}}</div>
-        <div class="col-sm-2">
-            <span *ngIf="character.type == 'H'">Hero</span>
-            <span *ngIf="character.type == 'V'">Villain</span>
+<div class="text-center">Power lies with: {{power}}</div>
+<div class="row">
+    <div class="col-sm-6">
+        <div *ngFor="let character of characters">
+            <div class="row" *ngIf="character.type === 'H'">
+                <div class="col-sm-2">{{character.name}}</div>
+                <div class="col-sm-2">
+                    Hero
+                </div>
+                <div class="col-sm-2">
+                    +{{character.level}}
+                </div>
+                <div class="col-sm-6">
+                    {{character.desc}}
+                </div>
+            </div>
         </div>
-        <div class="col-sm-2">
-            <span *ngIf="character.type =='H'">+</span>
-            <span *ngIf="character.type =='V'">-</span>
-            {{character.level}}
-        </div>
-        <div class="col-sm-6">
-            {{character.desc}}
+    </div>
+    <div class="col-sm-6">
+        <div *ngFor="let character of characters">
+            <div class="row" *ngIf="character.type === 'V'">
+                <div class="col-sm-2">{{character.name}}</div>
+                <div class="col-sm-2">
+                    Villain
+                </div>
+                <div class="col-sm-2">
+                    -{{character.level}}
+                </div>
+                <div class="col-sm-6">
+                    {{character.desc}}
+                </div>
+            </div>
         </div>
     </div>
 </div>
