@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'hero-villain';
+//  Hero points and Villain points should balance
 }

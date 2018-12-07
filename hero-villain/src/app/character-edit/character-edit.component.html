@@ -1,3 +1,67 @@
-<p>
-  character-edit works!
-</p>
+<form>
+    <div class="form-group row">
+        <div class="col-sm-2">
+            <label class="col-form-label" for="characterName">Name</label>
+        </div>
+        <div class="col-sm-10">
+            <input type="email" class="form-control col-sm-10" id="characterName" placeholder="Character Name">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2">
+            <label class="col-form-label">Level</label>
+        </div>
+        <div class="col-sm-10">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="l1" id="l1" value="1" checked>
+                <label class="form-check-label level-1" for="l1">
+                    Level 1
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="l2" id="l2" value="2">
+                <label class="form-check-label level-2" for="l2">
+                    Level 2
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="l3" id="l3" value="3">
+                <label class="form-check-label level-3" for="l3">
+                    Level 3
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="l4" id="l4" value="4">
+                <label class="form-check-label level-4" for="l4">
+                    Level 4
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="l5" id="l5" value="5">
+                <label class="form-check-label level-5" for="l5">
+                    Level 5
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-sm-2">
+            <label for="characterType">Character type</label>
+        </div>
+        <div class="col-sm-10">
+            <select class="form-control" id="characterType">
+                <option selected>Hero</option>
+                <option>Villain</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-2">
+            <label for="desc">Tell me more about it</label>
+        </div>
+        <div class="col-sm-10">
+            <textarea class="form-control" id="desc" rows="3"></textarea>
+        </div>
+    </div>
+</form>
