@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, DoCheck, OnInit} from '@angular/core';
 import {Character} from "../character.model";
 import {CharacterService} from "../character.service";
 
@@ -7,7 +7,7 @@ import {CharacterService} from "../character.service";
     templateUrl: './character-detail.component.html',
     styleUrls: ['./character-detail.component.css']
 } )
-export class CharacterDetailComponent implements OnInit
+export class CharacterDetailComponent implements OnInit, DoCheck
 {
     characters: Character[] = [];
     power: string;
@@ -18,8 +18,12 @@ export class CharacterDetailComponent implements OnInit
 
     ngOnInit()
     {
-        this.getPowerVal();
         this.getCharacters();
+    }
+
+    ngDoCheck()
+    {
+        this.getPowerVal();
     }
 
     getCharacters(): void
