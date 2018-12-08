@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Character} from "../character.model";
 import {CharacterService} from "../character.service";
-import {forEach} from "@angular/router/src/utils/collection";
 
 @Component( {
     selector: 'app-character-detail',
@@ -19,6 +18,7 @@ export class CharacterDetailComponent implements OnInit
 
     ngOnInit()
     {
+        this.getPowerVal();
         this.getCharacters();
     }
 
@@ -31,21 +31,11 @@ export class CharacterDetailComponent implements OnInit
 
     }
 
-    computePower( characters: Character[] )
+    getPowerVal(): void
     {
-        let powerVal = 0;
-        characters.forEach( function ( entry ) {
-            if( entry.type === 'H' )
-            {
-                powerVal += entry.level;
-            }
-            else
-            {
-                powerVal -= entry.level;
-            }
-        } );
-        this.power = (powerVal > 0 && powerVal !=0) ? 'Heroes :)' : 'Villain :(';
+        this.cs.getPowerVal()
+            .subscribe( power => {
+                this.power = power;
+            } );
     }
-
-
 }
